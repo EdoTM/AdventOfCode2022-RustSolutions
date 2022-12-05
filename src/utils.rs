@@ -13,15 +13,6 @@ pub fn get_lines_from_input_file(day: u8, example: bool) -> Vec<String> {
         .collect()
 }
 
-// pub fn get_nums_from_input_file(day: u8, example: bool) -> Vec<i32> {
-//     let lines = get_lines_from_input_file(day, example);
-    
-//     lines
-//         .iter()
-//         .map(|x| x.parse::<i32>().unwrap())
-//         .collect()
-// }
-
 pub fn print_part_solution<T: std::fmt::Display>(part: u8, solution: T) {
     println!("Part {} solution:", part);
     println!("{}", solution);
