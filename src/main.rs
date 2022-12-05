@@ -7,9 +7,9 @@ mod day5;
 
 fn main() {
     
-    let example = std::env::args().nth(2) == Some("ex".to_string());
-
     let day = parse_day();
+    let example = std::env::args().nth(2) == Some("ex".to_string());
+    
     match day {
         1 => day1::day1_solution(example),
         2 => day2::day2_solution(example),
