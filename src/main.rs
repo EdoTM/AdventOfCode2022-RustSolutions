@@ -6,7 +6,16 @@ mod day4;
 mod day5;
 
 fn main() {
-    let arg = std::env::args().nth(1).unwrap();
+    let arg = std::env::args().nth(1);
+    match arg {
+        None => {
+            println!("Usage: aoc2022 <day> [ex]");
+            println!("If you are using cargo: cargo run <day> [ex]");
+            std::process::exit(1);
+        }
+        _ => ()
+    }
+    let arg = arg.unwrap();
     let day = arg.parse::<i32>().unwrap();
     let example = std::env::args().nth(2) == Some("ex".to_string());
     match day {
