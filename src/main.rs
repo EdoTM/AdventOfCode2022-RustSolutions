@@ -7,6 +7,24 @@ mod day5;
 
 fn main() {
     
+    let example = std::env::args().nth(2) == Some("ex".to_string());
+
+    let day = parse_day();
+    match day {
+        1 => day1::day1_solution(example),
+        2 => day2::day2_solution(example),
+        3 => day3::day3_solution(example),
+        4 => day4::day4_solution(example),
+        5 => day5::day5_solution(example),
+        _ => {
+            println!("Day {} not implemented", day);
+            std::process::exit(1);
+        }
+    }
+}
+
+
+fn parse_day() -> u32 {
     let arg;
     match std::env::args().nth(1) {
         None => {
@@ -17,24 +35,10 @@ fn main() {
         Some(v) => arg = v
     }
 
-    let day;
     match arg.parse::<u32>() {
-        Ok(d) => day = d,
+        Ok(day) => day,
         Err(_) => {
             println!("Day must be an integer from 1 to 25.");
-            std::process::exit(1);
-        }
-    }
-
-    let example = std::env::args().nth(2) == Some("ex".to_string());
-    match day {
-        1 => day1::day1_solution(example),
-        2 => day2::day2_solution(example),
-        3 => day3::day3_solution(example),
-        4 => day4::day4_solution(example),
-        5 => day5::day5_solution(example),
-        _ => {
-            println!("Day {} not implemented", day);
             std::process::exit(1);
         }
     }
