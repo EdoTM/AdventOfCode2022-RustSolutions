@@ -32,7 +32,6 @@ fn part2(lines: &Vec<String>) {
         } else {
             local_max += line.parse::<u32>().unwrap();
         }
-        println!("{:?}", top_3);
     }
     sub_if_greater(&mut top_3, local_max);
     utils::print_part_solution(2, top_3.iter().sum::<u32>());
