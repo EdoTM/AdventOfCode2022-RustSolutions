@@ -3,7 +3,6 @@ use std::ops::Index;
 use crate::utils;
 
 
-
 pub fn day8_solution(example: bool) {
     let lines = utils::get_lines_from_input_file(8, example);
 
