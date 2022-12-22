@@ -13,6 +13,7 @@ mod day11;
 mod day12;
 mod day13;
 mod day14;
+mod day15;
 
 fn main() {
     let day = parse_day();
@@ -33,6 +34,7 @@ fn main() {
         12 => day12::day12_solution(example),
         13 => day13::day13_solution(example),
         14 => day14::day14_solution(example),
+        15 => day15::day15_solution(example),
         _ => {
             println!("Day {} not implemented", day);
             std::process::exit(1);
